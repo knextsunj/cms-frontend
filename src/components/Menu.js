@@ -39,6 +39,7 @@ import Customer from './Customer';
 import UpdateCustomerSelectCustomer from './UpdateCustomerSelectCustomer';
 import UpdateSelectedCustomer from './UpdateSelectedCustomer';
 import DeleteCustomer from './DeleteCustomer';
+import ShowAllCustomers from './ShowAllCustomers';
 
 class Menu extends Component {
 
@@ -76,6 +77,7 @@ class Menu extends Component {
                <NavLink exact to="/customer" >Add Customer</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <NavLink exact to="/updateCustomer" >Update Customer</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <NavLink exact to="/deleteCustomer" >Delete Customer</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <NavLink exact to="/showAllCustomers">Show All Customers</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
                <Switch>
@@ -192,6 +194,9 @@ class Menu extends Component {
                   </Route>
                   <Route exact path="/deleteCustomer">
                      <DeleteCustomer />
+                  </Route>
+                  <Route exact path="/showAllCustomers">
+                     <ShowAllCustomers />
                   </Route>
                   <Route><PageNotFound /></Route>
                </Switch>
