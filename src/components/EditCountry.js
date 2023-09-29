@@ -7,7 +7,7 @@ function EditCountry(props) {
     const [open, setOpen] = useState(false);
     const [country, setCountry] = useState({ name: '',id:''});
 
-    const link = "http://localhost:9080/country/update"
+    const link = "http://localhost:8080/cms-0.1.0/country/update"
 
     const handleClickOpen = () => {
         setCountry({name:props.data.row.name,id:props.data.row.id})

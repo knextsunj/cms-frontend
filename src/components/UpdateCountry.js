@@ -5,7 +5,7 @@ import { Button, Link } from "@mui/material";
 
 function UpdateCountry(props) {
 
-    const baseURL = "http://localhost:9080/country/findAll"
+    const baseURL = "http://localhost:8080/cms-0.1.0/country/findAll"
     
 
     const [countryList, setCountryList] = useState([]);
@@ -32,7 +32,8 @@ function UpdateCountry(props) {
 
    const fetchCountries = () =>{
     fetch(baseURL , {
-      headers: { 'Authorization' : token }
+      method:'GET',
+      headers: { 'Authorization' : token,'Content-Type':'application/json' }
     })
     .then(response=>response.json())
     .then(data=>setCountryList(data))

@@ -4,7 +4,7 @@ import React, { useEffect, useState, Fragment } from "react";
 
 function UpdateAddressType(props) {
 
-    const baseURL = "http://localhost:9080/addresstype/findAll"
+    const baseURL = "http://localhost:8080/cms-0.1.0/addresstype/findAll"
     
 
     const [addressTypeList, setAddressTypeList] = useState([]);
@@ -31,7 +31,7 @@ function UpdateAddressType(props) {
 
    const fetchAddressType = () =>{
     fetch(baseURL , {
-      headers: { 'Authorization' : token }
+      headers: { 'Authorization' : token,'Content-Type':'application/json' }
     })
     .then(response=>response.json())
     .then(data=>setAddressTypeList(data))

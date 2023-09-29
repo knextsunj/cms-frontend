@@ -4,7 +4,7 @@ import React, { useEffect, useState, Fragment } from "react";
 
 function UpdateCustomerStatus(props) {
 
-    const baseURL = "http://localhost:9080/customerstatus/findAll"
+    const baseURL = "http://localhost:8080/cms-0.1.0/customerstatus/findAll"
     
 
     const [customerStatusList, setcustomerStatusList] = useState([]);
@@ -31,7 +31,8 @@ function UpdateCustomerStatus(props) {
 
    const fetchCustomerStatus = () =>{
     fetch(baseURL , {
-      headers: { 'Authorization' : token }
+      method:'GET',
+      headers: { 'Authorization' : token,'Content-Type':'application/json' }
     })
     .then(response=>response.json())
     .then(data=>setcustomerStatusList(data))

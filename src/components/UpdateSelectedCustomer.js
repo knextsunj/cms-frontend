@@ -33,9 +33,9 @@ const reducer = (state, action) => {
 
 const UpdateSelectedCustomer = (props) => {
 
-    const baseURL = "http://localhost:9080/customer/update"
+    const baseURL = "http://localhost:8080/cms-0.1.0/customer/update"
 
-    const fetchCustomerStatusUrl = "http://localhost:9080/customerstatus/findAll";
+    const fetchCustomerStatusUrl = "http://localhost:8080/cms-0.1.0/customerstatus/findAll";
 
     const initialState = {
         id: 0, name: props.data.row.name, dob: props.data.row.dob, customerStatus: props.data.row.customerStatusDescr,

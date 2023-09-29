@@ -4,9 +4,9 @@ import Snackbar from '@mui/material/Snackbar';
 
 function DeleteSelectedCity(props) {
 
-  const fetchURL = "http://localhost:9080/city/find/" + props.data.row.id;
+  const fetchURL = "http://localhost:8080/cms-0.1.0/city/find/" + props.data.row.id;
 
-  const updateURL = "http://localhost:9080/city/update"
+  const updateURL = "http://localhost:8080/cms-0.1.0/city/update"
 
   const [cityList, setCityList] = useState([]);
   const [open, setOpen] = useState(false);
@@ -43,7 +43,8 @@ function DeleteSelectedCity(props) {
   const fetchCities = () => {
 
     fetch(fetchURL, {
-      headers: { 'Authorization': token }
+      method:'GET',
+      headers: { 'Authorization': token,'Content-Type':'application/json' }
     })
       .then(response => response.json())
       .then(data => setCityList(data))

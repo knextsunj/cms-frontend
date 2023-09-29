@@ -4,9 +4,9 @@ import React, { useEffect, useState, Fragment } from "react";
 
 function DeleteAddressType(props) {
 
-    const updateURL = "http://localhost:9080/addresstype/update"
+    const updateURL = "http://localhost:8080/cms-0.1.0/addresstype/update"
 
-    const fetchURL = "http://localhost:9080/addresstype/findAll"
+    const fetchURL = "http://localhost:8080/cms-0.1.0/addresstype/findAll"
     
 
     const [AddressTypeList, setAddressTypeList] = useState([]);
@@ -35,7 +35,8 @@ function DeleteAddressType(props) {
 
    const fetchAddressType = () =>{
     fetch(fetchURL , {
-      headers: { 'Authorization' : token }
+      method:'GET',
+      headers: { 'Authorization' : token,'Content-Type':'application/json' }
     })
     .then(response=>response.json())
     .then(data=>setAddressTypeList(data))

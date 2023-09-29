@@ -15,7 +15,7 @@ switch(action.type) {
 }
 
 const AddCity = (props) => {
-    const baseURL = "http://localhost:9080/city/save"
+    const baseURL = "http://localhost:8080/cms-0.1.0/city/save"
 
     const initialState = {id:0,name:'',deleted:'',countryId:'',countryName:''};
 

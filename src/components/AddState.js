@@ -5,7 +5,7 @@ import axios from "axios";
 
 const AddState = (props) => {
 
-    const baseURL = "http://localhost:9080/state/save"
+    const baseURL = "http://localhost:8080/cms-0.1.0/state/save"
 
     const [stateName, setStateName] = useState('')
 

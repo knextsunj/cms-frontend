@@ -7,7 +7,7 @@ function EditAddressType(props) {
     const [open, setOpen] = useState(false);
     const [addressType, setAddressType] = useState({ name: '',id:''});
 
-    const link = "http://localhost:9080/addresstype/update"
+    const link = "http://localhost:8080/cms-0.1.0/addresstype/update"
 
     const handleClickOpen = () => {
         setAddressType({name:props.data.row.name,id:props.data.row.id})

@@ -6,7 +6,7 @@ import UpdateSelectedCity from "./UpdateSelectedCity.js";
 
 function UpdateCitySelectCity(props) {
 
-    const fetchURL = "http://localhost:9080/city/find/"+props.data.row.id;
+    const fetchURL = "http://localhost:8080/cms-0.1.0/city/find/"+props.data.row.id;
 
 
     const [cityList, setCityList] = useState([]);
@@ -29,7 +29,8 @@ function UpdateCitySelectCity(props) {
         const fetchCities = () =>{
          
             fetch(fetchURL , {
-              headers: { 'Authorization' : token }
+              method:'GET',
+              headers: { 'Authorization' : token,'Content-Type':'application/json' }
             })
             .then(response=>response.json())
             .then(data=>setCityList(data))

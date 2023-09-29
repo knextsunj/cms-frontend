@@ -18,7 +18,7 @@ switch(action.type) {
 }
 
 const UpdateSelectedCity = (props) => {
-    const baseURL = "http://localhost:9080/city/update"
+    const baseURL = "http://localhost:8080/cms-0.1.0/city/update"
 
     const initialState = {id:0,name:'',deleted:'',countryId:'',countryName:''};
 

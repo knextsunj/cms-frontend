@@ -6,7 +6,7 @@ import DeleteSelectedCity from "./DeleteSelectedCity.js";
 
 function DeleteCitySelectState(props) {
 
-    const fetchURL = "http://localhost:9080/state/find/"+props.data.row.id;
+    const fetchURL = "http://localhost:8080/cms-0.1.0/state/find/"+props.data.row.id;
 
 
     const [stateList, setStateList] = useState([]);
@@ -25,7 +25,8 @@ function DeleteCitySelectState(props) {
         const fetchStates = () =>{
          
             fetch(fetchURL , {
-              headers: { 'Authorization' : token }
+              method:'GET',
+              headers: { 'Authorization' : token,'Content-Type':'application/json' }
             })
             .then(response=>response.json())
             .then(data=>setStateList(data))

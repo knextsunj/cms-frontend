@@ -6,7 +6,7 @@ import UpdateSelectedCustomer from "./UpdateSelectedCustomer.js";
 
 function UpdateCustomerSelectCustomer(props) {
 
-    const fetchURL = "http://localhost:9080/customer/findAll";
+    const fetchURL = "http://localhost:8080/cms-0.1.0/customer/findAll";
 
 
     const [customerList, setCustomerList] = useState([]);
@@ -25,7 +25,8 @@ function UpdateCustomerSelectCustomer(props) {
     const fetchCustomers = () => {
 
         fetch(fetchURL, {
-            headers: { 'Authorization': token }
+            method:'GET',
+            headers: { 'Authorization': token,'Content-Type':'application/json' }
         })
             .then(response => response.json())
             .then(data => setCustomerList(data))

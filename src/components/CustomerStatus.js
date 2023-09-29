@@ -3,7 +3,7 @@ import axios from "axios";
 
 class CustomerStatus extends Component {
 
-baseURL="http://localhost:9080/customerstatus/save"
+baseURL="http://localhost:8080/cms-0.1.0/customerstatus/save"
 
  constructor(props) {
     super(props);

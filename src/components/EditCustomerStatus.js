@@ -7,7 +7,7 @@ function EditCustomerStatus(props) {
     const [open, setOpen] = useState(false);
     const [customerStatus, setCustomerStatus] = useState({ name: '',id:''});
 
-    const link = "http://localhost:9080/customerstatus/update"
+    const link = "http://localhost:8080/cms-0.1.0/customerstatus/update"
 
     const handleClickOpen = () => {
         setCustomerStatus({name:props.data.row.name,id:props.data.row.id})

@@ -4,9 +4,9 @@ import React, { useEffect, useState, Fragment } from "react";
 
 function DeleteCountry(props) {
 
-    const updateURL = "http://localhost:9080/country/update"
+    const updateURL = "http://localhost:8080/cms-0.1.0/country/update"
 
-    const fetchURL = "http://localhost:9080/country/findAll"
+    const fetchURL = "http://localhost:8080/cms-0.1.0/country/findAll"
     
 
     const [countryList, setCountryList] = useState([]);

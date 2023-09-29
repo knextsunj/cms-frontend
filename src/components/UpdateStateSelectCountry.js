@@ -5,7 +5,7 @@ import UpdateStateSelectState from './UpdateStateSelectState';
 
 function UpdateStateSelectCountry(props) {
 
-    const fetchURL = "http://localhost:9080/country/findAll"
+    const fetchURL = "http://localhost:8080/cms-0.1.0/country/findAll"
     
 
     const [countryList, setCountryList] = useState([]);
@@ -25,7 +25,8 @@ function UpdateStateSelectCountry(props) {
 
    const fetchCountries = () =>{
     fetch(fetchURL , {
-      headers: { 'Authorization' : token }
+      method:'GET',
+      headers: { 'Authorization' : token,'Content-Type':'application/json' }
     })
     .then(response=>response.json())
     .then(data=>setCountryList(data))

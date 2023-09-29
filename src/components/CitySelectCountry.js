@@ -4,7 +4,7 @@ import { useState, useEffect, Fragment} from "react";
 import CitySelectState from './CitySelectState';
 
 const CitySelectCountry = (props) => {
-    const fetchURL = "http://localhost:9080/country/findAll"
+    const fetchURL = "http://localhost:8080/cms-0.1.0/country/findAll"
     
 
     const [countryList, setCountryList] = useState([]);
@@ -23,13 +23,13 @@ const CitySelectCountry = (props) => {
         // return(
           // <Redirect push to="/addState" data={row} />
         //   <AddState data={row} />
-        
         // )
       }
 
    const fetchCountries = () =>{
     fetch(fetchURL , {
-      headers: { 'Authorization' : token }
+      headers: { 'Authorization' : token,'Content-Type':'application/json' },
+      method: 'GET'
     })
     .then(response=>response.json())
     .then(data=>setCountryList(data))

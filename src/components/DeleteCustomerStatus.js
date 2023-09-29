@@ -4,9 +4,9 @@ import React, { useEffect, useState, Fragment } from "react";
 
 function DeleteCustomerStatus(props) {
 
-    const updateURL = "http://localhost:9080/customerstatus/update"
+    const updateURL = "http://localhost:8080/cms-0.1.0/customerstatus/update"
 
-    const fetchURL = "http://localhost:9080/customerstatus/findAll"
+    const fetchURL = "http://localhost:8080/cms-0.1.0/customerstatus/findAll"
     
 
     const [customerStatusList, setCustomerStatusList] = useState([]);
@@ -35,7 +35,8 @@ function DeleteCustomerStatus(props) {
 
    const fetchCustomerStatus = () =>{
     fetch(fetchURL , {
-      headers: { 'Authorization' : token }
+      method:'GET',
+      headers: { 'Authorization' : token,'Content-Type':'application/json' }
     })
     .then(response=>response.json())
     .then(data=>setCustomerStatusList(data))

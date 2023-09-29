@@ -20,9 +20,9 @@ import moment from "moment";
 const Customer = function (props) {
 
 
-    const fetchCustomerStatusUrl = "http://localhost:9080/customerstatus/findAll";
+    const fetchCustomerStatusUrl = "http://localhost:8080/cms-0.1.0/findAll";
 
-    const baseURL = "http://localhost:9080/customer/save";
+    const baseURL = "http://localhost:8080/cms-0.1.0/customer/save";
 
     const [customerStatusList, setCustomerStatusList] = useState([]);
     const [open, setOpen] = useState(false);
@@ -40,7 +40,8 @@ const Customer = function (props) {
 
     const fetchCustomerStatus = () => {
         fetch(fetchCustomerStatusUrl, {
-            headers: { 'Authorization': token }
+            headers: { 'Authorization': token,'Content-Type':'application/json' },
+            method:'GET'
         })
             .then(response => response.json())
             .then(data => setCustomerStatusList(data))

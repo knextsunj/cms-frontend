@@ -4,7 +4,7 @@ import "./css/showallcountries.css"
 
 const ShowAllCountries = (props) => {
 
-  const baseURL = "http://localhost:9080/country/findAll"
+  const baseURL = "http://localhost:8080/cms-0.1.0/country/findAll"
 
   const [countryList, setCountryList] = useState([]);
 
@@ -18,7 +18,8 @@ const ShowAllCountries = (props) => {
 
   const fetchCountries = () =>{
     fetch(baseURL , {
-      headers: { 'Authorization' : token }
+      headers: { 'Authorization' : token ,'Content-Type':'application/json'},
+      method: 'GET'
     })
     .then(response=>response.json())
     .then(data=>setCountryList(data))

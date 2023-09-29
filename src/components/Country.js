@@ -4,7 +4,7 @@ import { SERVER_URL } from '../constants.js';
 
 class Country extends Component {
 
-baseURL="http://localhost:9080/country/save"
+baseURL="http://localhost:8080/cms-0.1.0/country/save"
 
  constructor(props) {
     super(props);

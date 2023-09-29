@@ -3,7 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 function ShowAllStatesSelectedCountry(props) {
 
-  const fetchURL = "http://localhost:9080/state/find/" + props.data.row.id;
+  const fetchURL = "http://localhost:8080/cms-0.1.0/state/find/" + props.data.row.id;
 
   const [stateList, setStateList] = useState([]);
 
@@ -12,7 +12,8 @@ function ShowAllStatesSelectedCountry(props) {
   const fetchStates = () => {
 
     fetch(fetchURL, {
-      headers: { 'Authorization': token }
+      method:'GET',
+      headers: { 'Authorization': token,'Content-Type':'application/json' }
     })
       .then(response => response.json())
       .then(data => setStateList(data))

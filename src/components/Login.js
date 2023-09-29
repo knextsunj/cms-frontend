@@ -22,13 +22,14 @@ function Login(props) {
   const [open, setOpen] = useState(false);
    
 
-
   const handleChange = (event) => {
     setUser({...user, [event.target.name] : event.target.value});
   }
   
   const login = (props) => { 
-    fetch(SERVER_URL + 'login', {
+      console.log(user.username)
+      console.log(user.password)
+    fetch(SERVER_URL + 'login?&username='+user.username+"&password="+user.password, {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
       body: JSON.stringify(user)
@@ -58,11 +59,11 @@ function Login(props) {
     <br />
     <br />
     <br />
-
     <Stack spacing={2} alignItems='center' mt={2}>
     <InputLabel>Username</InputLabel>    
       <TextField 
         sx={{ label: { color: 'yellow' } }}
+        type="text"
         name="username"
         label="Username" 
         onChange={handleChange} />

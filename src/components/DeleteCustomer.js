@@ -4,9 +4,9 @@ import Snackbar from '@mui/material/Snackbar';
 
 function DeleteCustomer(props) {
 
-    const fetchURL = "http://localhost:9080/customer/findAll";
+    const fetchURL = "http://localhost:8080/cms-0.1.0/customer/findAll";
 
-    const updateURL = "http://localhost:9080/customer/update"
+    const updateURL = "http://localhost:8080/cms-0.1.0/customer/update"
 
 
 
@@ -44,7 +44,8 @@ function DeleteCustomer(props) {
     const fetchCustomers = () => {
 
         fetch(fetchURL, {
-            headers: { 'Authorization': token }
+            method:'GET',
+            headers: { 'Authorization': token,'Content-Type':'application/json' }
         })
             .then(response => response.json())
             .then(data => setCustomerList(data))

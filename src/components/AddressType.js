@@ -3,7 +3,7 @@ import axios from "axios";
 
 class AddressType extends Component {
 
-baseURL="http://localhost:9080/addresstype/save"
+baseURL="http://localhost:8080/cms-0.1.0/addresstype/save"
 
  constructor(props) {
     super(props);
