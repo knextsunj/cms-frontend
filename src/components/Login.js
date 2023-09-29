@@ -29,7 +29,7 @@ function Login(props) {
   const login = (props) => { 
       console.log(user.username)
       console.log(user.password)
-    fetch(SERVER_URL + 'login?&username='+user.username+"&password="+user.password, {
+    fetch(SERVER_URL + 'login', {
       method: 'POST',
       headers: { 'Content-Type':'application/json' },
       body: JSON.stringify(user)
