@@ -40,6 +40,10 @@ import UpdateCustomerSelectCustomer from './UpdateCustomerSelectCustomer';
 import UpdateSelectedCustomer from './UpdateSelectedCustomer';
 import DeleteCustomer from './DeleteCustomer';
 import ShowAllCustomers from './ShowAllCustomers';
+import AddressSelectCustomer from './AddressSelectCustomer';
+import Address from './Address';
+import ShowAllCustomersIDProofSubmit from './ShowAllCustomersIDProofSubmit';
+import IDProofSubmit from './IDProofSubmit';
 
 class Menu extends Component {
 
@@ -78,7 +82,8 @@ class Menu extends Component {
                <NavLink exact to="/updateCustomer" >Update Customer</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <NavLink exact to="/deleteCustomer" >Delete Customer</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <NavLink exact to="/showAllCustomers">Show All Customers</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
+               <NavLink exact to="/address">Add Address</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <NavLink exact to="/showAllCustomersIDProofSubmit">ShowAllCustomersIDProofSubmit</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                <Switch>
                   <Route exact path="/">
@@ -197,6 +202,18 @@ class Menu extends Component {
                   </Route>
                   <Route exact path="/showAllCustomers">
                      <ShowAllCustomers />
+                  </Route>
+                  <Route exact path="/address">
+                     <AddressSelectCustomer />
+                  </Route>
+                  <Route exact path="/addAddress">
+                     <Address />
+                  </Route>
+                  <Route exact path="/showAllCustomersIDProofSubmit">
+                     <ShowAllCustomersIDProofSubmit />
+                  </Route>
+                  <Route exact path="/idProofSubmit">
+                     <IDProofSubmit />
                   </Route>
                   <Route><PageNotFound /></Route>
                </Switch>
