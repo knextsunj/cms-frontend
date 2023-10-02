@@ -20,7 +20,7 @@ import moment from "moment";
 const Customer = function (props) {
 
 
-    const fetchCustomerStatusUrl = "http://localhost:8080/cms-0.1.0/findAll";
+    const fetchCustomerStatusUrl = "http://localhost:8080/cms-0.1.0/customerstatus/findAll";
 
     const baseURL = "http://localhost:8080/cms-0.1.0/customer/save";
 
